@@ -837,7 +837,7 @@
     bpk-spacing-md() center;
   background-size: $bpk-input-height / 2;
   color: $bpk-select-color;
-  line-height: $bpk-line-height-base - (2 * $bpk-select-border-width);
+  line-height: ($bpk-line-height-base - (2 * $bpk-select-border-width));
   appearance: none;
 
   @include bpk-rtl {
@@ -1269,6 +1269,7 @@
 @mixin bpk-form-validation__container"><h3 class="item__heading"><a class="item__name" href="#css-//
 @mixin bpk-form-validation__container">// @mixin bpk-form-validation__container</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>//
 @mixin bpk-form-validation__container {
+  margin-top: bpk-spacing-md();
   font-size: $bpk-text-xs-font-size;
 }</code>" data-collapsed="//
 @mixin bpk-form-validation__container { ... }"><code>//
