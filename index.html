@@ -1498,7 +1498,10 @@
     display: none;
   } @else {
     display: block;
-    width: math.percentage($size / $bpk-grid-columns);
+
+    /* Disabling rule here as this method is for newer sass versions that we don&#39;t yet support */
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    width: percentage($size / $bpk-grid-columns);
   }
  }" data-collapsed="@mixin bpk-grid__column--() { ... }"><code>@mixin bpk-grid__column--() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Grid column width. Modifies the bpk-grid__column mixin.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.selector {
   @include bpk-grid__column();
@@ -1525,10 +1528,14 @@
       margin-right: 0;
     }
   } @else {
-    margin-left: math.percentage($size / $bpk-grid-columns);
+    /* Disabling rule here as this method is for newer sass versions that we don&#39;t yet support */
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    margin-left: percentage($size / $bpk-grid-columns);
 
     @include bpk-rtl {
-      margin-right: math.percentage($size / $bpk-grid-columns);
+      /* Disabling rule here as this method is for newer sass versions that we don&#39;t yet support */
+      /* stylelint-disable-next-line scss/no-global-function-names */
+      margin-right: percentage($size / $bpk-grid-columns);
       margin-left: 0;
     }
   }
@@ -1779,7 +1786,10 @@
   }
 
   $icon-size: if($size == large, $bpk-icon-size-lg, $bpk-icon-size-sm);
-  $raw-svg: map.get($icon-map, $icon);
+
+  /* Disabling rule here as this method is for newer sass versions that we don&#39;t yet support */
+  /* stylelint-disable-next-line scss/no-global-function-names */
+  $raw-svg: map-get($icon-map, $icon);
   $svg-string: str-replace($raw-svg, &#39;$$COLOR$$&#39;, $color);
   $datauri: &#39;data:image/svg+xml;base64,&#39; + encodebase64($svg-string);
 
@@ -2703,7 +2713,9 @@ sass.render({
  }" data-collapsed="@mixin bpk-touch-tappable() { ... }"><code>@mixin bpk-touch-tappable() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Increases the tappable area of the element to the minimum required for touch devices.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.selector {
   @include bpk-touch-area;
 }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#spacings-variable-bpk-spacing-xxl"><code>bpk-spacing-xxl</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#spacings-variable-bpk-spacing-xxl"><code>bpk-spacing-xxl</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#spacings-variable-bpk-spacing-xxl"><code>bpk-spacing-xxl</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#spacings-variable-bpk-spacing-xxl"><code>bpk-spacing-xxl</code></a></li></ul></section></section><section class="main__sub-section" id="utils-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="utils-function-str-replace"><h3 class="item__heading"><a class="item__name" href="#function-str-replace">str-replace</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function str-replace($string, $search, $replace: &#39;&#39;) { 
-  $index: string.index($string, $search);
+  /* Disabling rule here as the recommendation method is for newer sass versions that we don&#39;t yet support */
+  /* stylelint-disable-next-line scss/no-global-function-names */
+  $index: str-index($string, $search);
 
   @if $index {
     @return str-slice($string, 1, $index - 1) + $replace +
